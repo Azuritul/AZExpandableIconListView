@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/AZExpandableIconListView.svg?style=flat)](http://cocoapods.org/pods/AZExpandableIconListView)
 [![License](https://img.shields.io/cocoapods/l/AZExpandableIconListView.svg?style=flat)](http://cocoapods.org/pods/AZExpandableIconListView)
 [![Platform](https://img.shields.io/cocoapods/p/AZExpandableIconListView.svg?style=flat)](http://cocoapods.org/pods/AZExpandableIconListView)
+[![Language](https://img.shields.io/badge/swift-2.1-orange.svg)](http://swift.org)
 
 An expandable/collapsible UIView that holds an array of UIImageView. Something like accordion.  An interesting practice with auto layout and animation.
 
