@@ -8,6 +8,7 @@
 An expandable/collapsible UIView that holds an array of UIImageView. Something like accordion.  An interesting practice with auto layout and animation.
 
 ## Screenshots
+
 Code used in the screencast are included in the bundled sample project.
 ![expandable](https://cloud.githubusercontent.com/assets/879197/12646401/2b39c754-c613-11e5-9b87-c5ec4084fbbb.gif)
 
