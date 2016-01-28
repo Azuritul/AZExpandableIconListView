@@ -17,7 +17,9 @@ public class AZExpandableIconListView: UIView {
     private var isExpanded : Bool = false
     private var itemSpacingConstraints : [NSLayoutConstraint] = []
     
-    var imageSpacing:CGFloat = 4.0
+    public var imageSpacing:CGFloat = 4.0
+    public var onExpanded: (()->())?
+    public var onCollapsed:(()->())?
     
     /// Image width is set to be always 80% of container view's frame width
     private var imageWidth : CGFloat {
@@ -59,17 +61,27 @@ public class AZExpandableIconListView: UIView {
             scrollView.addSubview(imageView)
         }
         self.addSubview(scrollView)
+        updateConstraints()
         updateContentSize()
     }
     
     func onViewTapped(){
         updateSpacingConstraints()
-        
+        isExpanded = !isExpanded
+        updateContentSize()
         UIView.animateWithDuration(0.4, delay: 0,
             usingSpringWithDamping: 0.6, initialSpringVelocity: 0.3,
-            options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                self.layoutIfNeeded()
-            }, completion: nil)
+            options: UIViewAnimationOptions.CurveEaseInOut, animations: { [weak self] in
+                self?.layoutIfNeeded()
+            }, completion: { [weak self] finished in
+                if let weakself = self {
+                    if weakself.isExpanded {
+                        weakself.onExpanded?()
+                    } else {
+                        weakself.onCollapsed?()
+                    }
+                }
+            })
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -144,8 +156,6 @@ public class AZExpandableIconListView: UIView {
                 constraint.constant = 1
             }
         }
-        isExpanded = !isExpanded
-        updateContentSize()
     }
     
     /**
