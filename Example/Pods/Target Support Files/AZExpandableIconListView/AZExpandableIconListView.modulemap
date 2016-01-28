@@ -1,0 +1,6 @@
+framework module AZExpandableIconListView {
+  umbrella header "AZExpandableIconListView-umbrella.h"
+
+  export *
+  module * { export * }
+}

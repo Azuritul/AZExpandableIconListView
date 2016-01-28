@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  AZExpandableIconListView
 //
-//  Created by Azuritul on 01/28/2016.
-//  Copyright (c) 2016 Azuritul. All rights reserved.
+//  Created by Chris Wu on 01/28/2016.
+//  Copyright (c) 2016 Chris Wu. All rights reserved.
 //
 
 import UIKit
