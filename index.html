@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>AZExpandableIconListView by Azuritul</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>AZExpandableIconListView</h1>
+        <p>An expandable/collapsible UIView that holds an array of UIImageView written in Swift.</p>
+
+        <p class="view"><a href="https://github.com/Azuritul/AZExpandableIconListView">View the Project on GitHub <small>Azuritul/AZExpandableIconListView</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Azuritul/AZExpandableIconListView/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Azuritul/AZExpandableIconListView/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Azuritul/AZExpandableIconListView">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><a href="https://travis-ci.org/Azuritul/AZExpandableIconListView"><img src="http://img.shields.io/travis/Azuritul/AZExpandableIconListView.svg?style=flat" alt="CI Status"></a>
+<a href="http://cocoapods.org/pods/AZExpandableIconListView"><img src="https://img.shields.io/cocoapods/v/AZExpandableIconListView.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/AZExpandableIconListView"><img src="https://img.shields.io/cocoapods/l/AZExpandableIconListView.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/AZExpandableIconListView"><img src="https://img.shields.io/cocoapods/p/AZExpandableIconListView.svg?style=flat" alt="Platform"></a>
+<a href="http://swift.org"><img src="https://img.shields.io/badge/swift-2.1-orange.svg" alt="Language"></a></p>
+
+<p>An expandable/collapsible UIView that holds an array of UIImageView. Something like accordion.  An interesting practice with auto layout and animation.</p>
+
+<h2>
+<a id="screenshots" class="anchor" href="#screenshots" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshots</h2>
+
+<p><img src="https://cloud.githubusercontent.com/assets/879197/12646401/2b39c754-c613-11e5-9b87-c5ec4084fbbb.gif" alt="expandable"></p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>iOS 8 or above</li>
+<li>Xcode 7 or above</li>
+<li>Swift 2.1</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>To run the example project, clone the repo with <code>git clone https://github.com/Azuritul/AZExpandableIconListView.git</code>, and run <code>pod install</code> from the Example directory first.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Initialize the view with frame and an array of images, for example:</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">let</span> expandable <span class="pl-k">=</span> AZExpandableIconListView(frame: CGRectMake(<span class="pl-c1">4</span>, <span class="pl-c1">30</span>, UIScreen<span class="pl-k">.</span>mainScreen()<span class="pl-k">.</span>bounds<span class="pl-k">.</span>size<span class="pl-k">.</span>width <span class="pl-k">-</span> <span class="pl-c1">20</span>, <span class="pl-c1">70</span>), images: [image1, image2, image3])
+view<span class="pl-k">.</span>addSubview(expandable)</pre></div>
+
+<p>Notice that the width and height of the icons in the view would always be 80% of the containing view's height.</p>
+
+<h3>
+<a id="configurable-options" class="anchor" href="#configurable-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configurable options</h3>
+
+<p>Currently AZDropdownMenu can be customized with the following properties. More will come in the future.</p>
+
+<ul>
+<li>
+<code>imageSpacing</code> The space between icons. Default is 4.</li>
+<li>
+<code>onExpanded</code> The method to be called when the menu is expanded. Default is null.</li>
+<li>
+<code>onCollapsed</code> The method to be called when the menu is collapsed. Default is null.</li>
+</ul>
+
+<h2>
+<a id="installation-1" class="anchor" href="#installation-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>AZExpandableIconListView is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+
+<div class="highlight highlight-source-ruby"><pre>use_frameworks!
+pod <span class="pl-s"><span class="pl-pds">'</span>AZExpandableIconListView<span class="pl-pds">'</span></span></pre></div>
+
+<h2>
+<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h2>
+
+<ul>
+<li>0.1.0
+
+<ul>
+<li>Initial version</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h2>
+
+<p>Chris Wu (Azuritul), <a href="mailto:azuritul@gmail.com">azuritul@gmail.com</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>AZExpandableIconListView is available under the MIT license. See the LICENSE file for more info.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Azuritul">Azuritul</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
