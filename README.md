@@ -40,7 +40,8 @@ AZExpandableIconListView is available through [CocoaPods](http://cocoapods.org).
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "AZExpandableIconListView"
+use_frameworks!
+pod 'AZExpandableIconListView'
 ```
 ## Version
 
