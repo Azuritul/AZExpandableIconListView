@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'AZExpandableIconListView_Example', :exclusive => true do
+  pod 'AZExpandableIconListView', :path => '../'
+end
+
+target 'AZExpandableIconListView_Tests', :exclusive => true do
+  pod 'AZExpandableIconListView', :path => '../'
+
+  
+end
