@@ -9,7 +9,7 @@
 An expandable/collapsible UIView that holds an array of UIImageView. Something like accordion.  An interesting practice with auto layout and animation.
 
 ## Screenshots
-![expandable](https://cloud.githubusercontent.com/assets/879197/12646401/2b39c754-c613-11e5-9b87-c5ec4084fbbb.gif)
+![expandable](https://cloud.githubusercontent.com/assets/879197/12738681/49bc442c-c9a6-11e5-976e-68650cbe4af2.gif)
 
 ## Requirements
 - iOS 8 or above
@@ -45,8 +45,14 @@ pod 'AZExpandableIconListView'
 ```
 ## Version
 
+- 0.1.1
+   - Updated README
 - 0.1.0
    - Initial version
+
+## Credit
+
+- Avatar icon used in README's screenshot is [Designed by Skydesign - Freepik.com](http://www.freepik.com/free-photos-vectors/people)
 
 ## Author
 
