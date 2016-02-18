@@ -16,7 +16,7 @@ An expandable/collapsible UIView that holds an array of UIImageView. Something l
 - Xcode 7 or above
 - Swift 2.1
 
-## Installation
+## Demo Project
 To run the example project, clone the repo with `git clone https://github.com/Azuritul/AZExpandableIconListView.git`, and run `pod install` from the Example directory first.
 
 ## Usage
