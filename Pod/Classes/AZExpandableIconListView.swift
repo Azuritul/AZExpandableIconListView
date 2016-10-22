@@ -9,28 +9,28 @@
 import Foundation
 
 
-public class AZExpandableIconListView: UIView {
+open class AZExpandableIconListView: UIView {
     
-    private var icons:[UIImageView] = []
-    private var scrollView:UIScrollView
-    private var isSetupFinished : Bool = false
-    private var isExpanded : Bool = false
-    private var itemSpacingConstraints : [NSLayoutConstraint] = []
+    fileprivate var icons:[UIImageView] = []
+    fileprivate var scrollView:UIScrollView
+    fileprivate var isSetupFinished : Bool = false
+    fileprivate var isExpanded : Bool = false
+    fileprivate var itemSpacingConstraints : [NSLayoutConstraint] = []
     
-    public var imageSpacing:CGFloat = 4.0
-    public var onExpanded: (()->())?
-    public var onCollapsed:(()->())?
+    open var imageSpacing:CGFloat = 4.0
+    open var onExpanded: (()->())?
+    open var onCollapsed:(()->())?
     
     /// Image width is set to be always 80% of container view's frame width
-    private var imageWidth : CGFloat {
+    fileprivate var imageWidth : CGFloat {
         return scrollView.frame.height * 0.8
     }
     
-    private var halfImageWidth : CGFloat {
+    fileprivate var halfImageWidth : CGFloat {
         return imageWidth * 0.5
     }
     
-    private var stretchedImageWidth : CGFloat {
+    fileprivate var stretchedImageWidth : CGFloat {
         return (CGFloat(icons.count) * imageWidth) + (CGFloat(icons.count) * imageSpacing)
     }
     
@@ -45,13 +45,13 @@ public class AZExpandableIconListView: UIView {
     public init(frame: CGRect, images:[UIImage]) {
         
         scrollView = UIScrollView(frame: frame)
-        scrollView.scrollEnabled = true
+        scrollView.isScrollEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         
         super.init(frame: frame)
         
-        let onTapView = UITapGestureRecognizer(target: self, action: "onViewTapped")
+        let onTapView = UITapGestureRecognizer(target: self, action: #selector(AZExpandableIconListView.onViewTapped))
         scrollView.addGestureRecognizer(onTapView)
         
         for image in images {
@@ -69,9 +69,9 @@ public class AZExpandableIconListView: UIView {
         updateSpacingConstraints()
         isExpanded = !isExpanded
         updateContentSize()
-        UIView.animateWithDuration(0.4, delay: 0,
+        UIView.animate(withDuration: 0.4, delay: 0,
             usingSpringWithDamping: 0.6, initialSpringVelocity: 0.3,
-            options: UIViewAnimationOptions.CurveEaseInOut, animations: { [weak self] in
+            options: UIViewAnimationOptions(), animations: { [weak self] in
                 self?.layoutIfNeeded()
             }, completion: { [weak self] finished in
                 if let weakself = self {
@@ -88,14 +88,14 @@ public class AZExpandableIconListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func updateConstraints() {
+    open override func updateConstraints() {
         super.updateConstraints()
         if isSetupFinished == false {
             setupInitialLayout()
         }
     }
     
-    private func setupInitialLayout() {
+    fileprivate func setupInitialLayout() {
         
         var layoutConstraints:[NSLayoutConstraint] = []
         
@@ -103,18 +103,18 @@ public class AZExpandableIconListView: UIView {
             let currentView = icons[i]
             
             //UIImage's constraint to vertically centered to containing scrollview
-            layoutConstraints.append(NSLayoutConstraint(item: currentView, attribute: NSLayoutAttribute.CenterY, relatedBy: .Equal, toItem: scrollView, attribute: .CenterY, multiplier: 1, constant: 0))
+            layoutConstraints.append(NSLayoutConstraint(item: currentView, attribute: NSLayoutAttribute.centerY, relatedBy: .equal, toItem: scrollView, attribute: .centerY, multiplier: 1, constant: 0))
             
             //UIImage's constraint for setting the width/height to be 80% of containing scrollview's height
-            layoutConstraints.append(NSLayoutConstraint(item: currentView, attribute: .Width, relatedBy: .Equal, toItem: scrollView, attribute: .Height, multiplier: 0.8, constant: 0))
-            layoutConstraints.append(NSLayoutConstraint(item: currentView, attribute: .Height, relatedBy: .Equal, toItem: scrollView, attribute: .Height, multiplier: 0.8, constant: 0))
+            layoutConstraints.append(NSLayoutConstraint(item: currentView, attribute: .width, relatedBy: .equal, toItem: scrollView, attribute: .height, multiplier: 0.8, constant: 0))
+            layoutConstraints.append(NSLayoutConstraint(item: currentView, attribute: .height, relatedBy: .equal, toItem: scrollView, attribute: .height, multiplier: 0.8, constant: 0))
             
             if i == 0 {
                 let marginLeftConstraint = NSLayoutConstraint(item: currentView,
-                    attribute: NSLayoutAttribute.Left,
-                    relatedBy: .Equal,
+                    attribute: NSLayoutAttribute.left,
+                    relatedBy: .equal,
                     toItem: scrollView,
-                    attribute: NSLayoutAttribute.Left,
+                    attribute: NSLayoutAttribute.left,
                     multiplier: 1, constant: 0)
                 
                 layoutConstraints.append(marginLeftConstraint)
@@ -122,21 +122,21 @@ public class AZExpandableIconListView: UIView {
             } else {
                 let previousView = icons[i-1]
                 itemSpacingConstraints.append(NSLayoutConstraint(item: currentView,
-                    attribute: .Left,
-                    relatedBy: .Equal ,
+                    attribute: .left,
+                    relatedBy: .equal ,
                     toItem: previousView,
-                    attribute: .CenterX,
+                    attribute: .centerX,
                     multiplier: 1,
                     constant: 1))
             }
         }
         
-        layoutConstraints.appendContentsOf(itemSpacingConstraints)
+        layoutConstraints.append(contentsOf: itemSpacingConstraints)
         scrollView.addConstraints(layoutConstraints)
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[container]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["container":scrollView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[container]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["container":scrollView]))
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[container]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["container":scrollView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[container]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["container":scrollView]))
         
         isSetupFinished = true
         
@@ -146,7 +146,7 @@ public class AZExpandableIconListView: UIView {
      Update the contraints of image spacing based on whether the images are expanded or not.
      Update content size of the containing UIScrollView.
      */
-    private func updateSpacingConstraints(){
+    fileprivate func updateSpacingConstraints(){
         if !isExpanded {
             for constraint in itemSpacingConstraints {
                 constraint.constant = halfImageWidth + imageSpacing
@@ -161,13 +161,13 @@ public class AZExpandableIconListView: UIView {
     /**
      Update the content size of the containing UIScrollView based on whether the images are expanded or not.
      */
-    private func updateContentSize(){
+    fileprivate func updateContentSize(){
         if isExpanded {
             let width = stretchedImageWidth
-            scrollView.contentSize = CGSizeMake(width, self.frame.height)
+            scrollView.contentSize = CGSize(width: width, height: self.frame.height)
         } else {
             let width = CGFloat(icons.count) * halfImageWidth
-            scrollView.contentSize = CGSizeMake(width, self.frame.height)
+            scrollView.contentSize = CGSize(width: width, height: self.frame.height)
         }
     }
     
@@ -179,20 +179,20 @@ public class AZExpandableIconListView: UIView {
      
      - returns: A circular UIImageView
      */
-    private func buildCircularIconFrom(image:UIImage, containerFrame frame:CGRect) -> UIImageView {
-        let newframe = CGRectMake(0, 0, imageWidth, imageWidth)
+    fileprivate func buildCircularIconFrom(_ image:UIImage, containerFrame frame:CGRect) -> UIImageView {
+        let newframe = CGRect(x: 0, y: 0, width: imageWidth, height: imageWidth)
         
         let imageView = UIImageView(frame:newframe)
         imageView.image = image
         
         let borderLayer = CALayer()
-        let borderFrame = CGRectMake(-1, -1, newframe.width + 2, newframe.height + 2)
+        let borderFrame = CGRect(x: -1, y: -1, width: newframe.width + 2, height: newframe.height + 2)
         
-        borderLayer.backgroundColor = UIColor.clearColor().CGColor
+        borderLayer.backgroundColor = UIColor.clear.cgColor
         borderLayer.frame = borderFrame
         borderLayer.cornerRadius = newframe.width * 0.5
         borderLayer.borderWidth = 4.0
-        borderLayer.borderColor = UIColor.whiteColor().CGColor
+        borderLayer.borderColor = UIColor.white.cgColor
         borderLayer.masksToBounds = true
         
         imageView.layer.addSublayer(borderLayer)
