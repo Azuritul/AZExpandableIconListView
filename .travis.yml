@@ -11,6 +11,7 @@ podfile: Example/Podfile
 before_install:
  - gem install xcpretty
  - gem install cocoapods  -v '1.1.1' # Since Travis is not always on latest version
+ - pod repo update
  - pod install --project-directory=Example
 
 script:
