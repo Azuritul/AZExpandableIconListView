@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AZExpandableIconListView"
-  s.version          = "0.2.0"
+  s.version          = "0.2.1"
   s.summary          = "Expandable icon list view"
 
 # This description is used to generate tags and improve search results.
@@ -27,7 +27,7 @@ An expandable/collapsible UIView that holds an array of UIImageView. Something l
   s.source           = { :git => "https://github.com/Azuritul/AZExpandableIconListView.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/azuritul'
 
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
