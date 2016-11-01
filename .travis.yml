@@ -3,16 +3,16 @@
 # * https://github.com/supermarin/xcpretty#usage
 rvm: 2.2.2
 language: objective-c
-osx_image: xcode7.2
+osx_image: xcode8
 
 # cache: cocoapods
 # podfile: Example/Podfile
 podfile: Example/Podfile
 before_install:
  - gem install xcpretty
- - gem install cocoapods  -v '0.39.0' # Since Travis is not always on latest version
+ - gem install cocoapods  -v '1.1.1' # Since Travis is not always on latest version
  - pod install --project-directory=Example
 
 script:
-- set -o pipefail && xcodebuild test -workspace Example/AZExpandableIconListView.xcworkspace -scheme AZExpandableIconListView-Example -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.4' ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/AZExpandableIconListView.xcworkspace -scheme AZExpandableIconListView-Example -destination 'platform=iOS Simulator,name=iPhone 7,OS=9' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint

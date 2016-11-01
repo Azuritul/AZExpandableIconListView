@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "AZExpandableIconListView"
-        self.navigationController?.navigationBar.translucent = false
-        self.navigationController?.view.backgroundColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.view.backgroundColor = UIColor.white
         
         let imageArray : [UIImage] = [
             UIImage(named: "icon_1.jpg")!,
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             UIImage(named: "icon_3.jpg")!
         ]
         
-        let expandable = AZExpandableIconListView(frame: CGRectMake(4, 10, UIScreen.mainScreen().bounds.size.width - 20, 50), images: imageArray)
+        let expandable = AZExpandableIconListView(frame: CGRect(x: 4, y: 10, width: UIScreen.main.bounds.size.width - 20, height: 50), images: imageArray)
         expandable.onExpanded = {
             if let textLabel = self.textLabel {
                 textLabel.text = "Expanded"
@@ -44,9 +44,9 @@ class ViewController: UIViewController {
         }
         self.view.addSubview(expandable)
         
-        let label = UILabel(frame: CGRectMake(10, 40, 200, 100))
+        let label = UILabel(frame: CGRect(x: 10, y: 40, width: 200, height: 100))
         label.text = "Initial"
-        label.textColor = UIColor.grayColor()
+        label.textColor = UIColor.gray
         textLabel = label
         textLabel?.font = UIFont(name: "Helvetica", size: 16)
         self.view.addSubview(textLabel!)
