@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/AZExpandableIconListView.svg?style=flat)](http://cocoapods.org/pods/AZExpandableIconListView)
 [![License](https://img.shields.io/cocoapods/l/AZExpandableIconListView.svg?style=flat)](http://cocoapods.org/pods/AZExpandableIconListView)
 [![Platform](https://img.shields.io/cocoapods/p/AZExpandableIconListView.svg?style=flat)](http://cocoapods.org/pods/AZExpandableIconListView)
-[![Language](https://img.shields.io/badge/swift-2.1-orange.svg)](http://swift.org)
+[![Language](https://img.shields.io/badge/swift-3.0-orange.svg)](http://swift.org)
 
 An expandable/collapsible UIView that holds an array of UIImageView. Something like accordion.  An interesting practice with auto layout and animation.
 
@@ -12,9 +12,9 @@ An expandable/collapsible UIView that holds an array of UIImageView. Something l
 ![expandable](https://cloud.githubusercontent.com/assets/879197/12738681/49bc442c-c9a6-11e5-976e-68650cbe4af2.gif)
 
 ## Requirements
-- iOS 8 or above
-- Xcode 7 or above
-- Swift 2.1
+- iOS 9 or above
+- Xcode 8 or above
+- Swift 3
 
 ## Demo Project
 To run the example project, clone the repo with `git clone https://github.com/Azuritul/AZExpandableIconListView.git`, and run `pod install` from the Example directory first.
@@ -44,7 +44,8 @@ use_frameworks!
 pod 'AZExpandableIconListView'
 ```
 ## Version
-
+- 0.2.0
+   - Updated for Swift 3
 - 0.1.1
    - Updated README
 - 0.1.0
