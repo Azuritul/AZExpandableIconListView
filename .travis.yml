@@ -4,6 +4,8 @@
 rvm: 2.2.2
 language: objective-c
 osx_image: xcode8
+notifications:
+  slack: azuritul:lCn25gPPuWbKQ4VlfG5Qglwp
 
 # cache: cocoapods
 # podfile: Example/Podfile
