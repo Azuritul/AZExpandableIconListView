@@ -1,5 +1,5 @@
 PODS:
-  - AZExpandableIconListView (0.1.0)
+  - AZExpandableIconListView (1.0.0)
 
 DEPENDENCIES:
   - AZExpandableIconListView (from `../`)
@@ -9,6 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AZExpandableIconListView: 2708f577b46c23b4cc302955584f20d731fadb6a
+  AZExpandableIconListView: 5cb546a808bf43a9c90993ab39c2b7f36b0e1359
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: bfbeb5c9e7076b21d4166e8de234c9d13dabfd8b
+
+COCOAPODS: 1.8.1

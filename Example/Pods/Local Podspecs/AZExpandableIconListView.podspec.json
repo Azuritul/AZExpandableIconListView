@@ -1,25 +1,23 @@
 {
   "name": "AZExpandableIconListView",
-  "version": "0.1.0",
-  "summary": "A short description of AZExpandableIconListView.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/AZExpandableIconListView",
+  "version": "1.0.0",
+  "summary": "Expandable icon list view",
+  "swift_versions": "5.0",
+  "description": "An expandable/collapsible UIView that holds an array of UIImageView. Something like accordion.",
+  "homepage": "https://github.com/Azuritul/AZExpandableIconListView",
   "license": "MIT",
   "authors": {
-    "Azuritul": "azuritul@gmail.com"
+    "Chris Wu(Azuritul)": "azuritul@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/AZExpandableIconListView.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/Azuritul/AZExpandableIconListView.git",
+    "tag": "1.0.0"
   },
+  "social_media_url": "https://twitter.com/azuritul",
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "AZExpandableIconListView": [
-      "Pod/Assets/*.png"
-    ]
-  }
+  "swift_version": "5.0"
 }

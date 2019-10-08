@@ -1,6 +1,5 @@
 # AZExpandableIconListView
-
-[![CI Status](http://img.shields.io/travis/Azuritul/AZExpandableIconListView.svg?style=flat)](https://travis-ci.org/Azuritul/AZExpandableIconListView)
+[![Build Status](https://app.bitrise.io/app/fe6be37387be0f5a/status.svg?token=vylVe85CKuVfX5Wuzs_n0A&branch=config/ci)](https://app.bitrise.io/app/fe6be37387be0f5a)
 [![Version](https://img.shields.io/cocoapods/v/AZExpandableIconListView.svg?style=flat)](http://cocoapods.org/pods/AZExpandableIconListView)
 [![License](https://img.shields.io/cocoapods/l/AZExpandableIconListView.svg?style=flat)](http://cocoapods.org/pods/AZExpandableIconListView)
 [![Platform](https://img.shields.io/cocoapods/p/AZExpandableIconListView.svg?style=flat)](http://cocoapods.org/pods/AZExpandableIconListView)
@@ -28,7 +27,7 @@ view.addSubview(expandable)
 Notice that the width and height of the icons in the view would always be 80% of the containing view's height.
 
 ### Configurable options
-Currently AZDropdownMenu can be customized with the following properties. More will come in the future.
+Currently AZExpandableIconListView can be customized with the following properties. More will come in the future.
 
 - `imageSpacing` The space between icons. Default is 4.
 - `onExpanded` The method to be called when the menu is expanded. Default is null.
