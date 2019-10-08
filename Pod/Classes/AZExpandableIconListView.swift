@@ -65,13 +65,13 @@ open class AZExpandableIconListView: UIView {
         updateContentSize()
     }
     
-    func onViewTapped(){
+    @objc func onViewTapped(){
         updateSpacingConstraints()
         isExpanded = !isExpanded
         updateContentSize()
         UIView.animate(withDuration: 0.4, delay: 0,
             usingSpringWithDamping: 0.6, initialSpringVelocity: 0.3,
-            options: UIViewAnimationOptions(), animations: { [weak self] in
+            options: UIView.AnimationOptions(), animations: { [weak self] in
                 self?.layoutIfNeeded()
             }, completion: { [weak self] finished in
                 if let weakself = self {
@@ -103,7 +103,7 @@ open class AZExpandableIconListView: UIView {
             let currentView = icons[i]
             
             //UIImage's constraint to vertically centered to containing scrollview
-            layoutConstraints.append(NSLayoutConstraint(item: currentView, attribute: NSLayoutAttribute.centerY, relatedBy: .equal, toItem: scrollView, attribute: .centerY, multiplier: 1, constant: 0))
+            layoutConstraints.append(NSLayoutConstraint(item: currentView, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: .equal, toItem: scrollView, attribute: .centerY, multiplier: 1, constant: 0))
             
             //UIImage's constraint for setting the width/height to be 80% of containing scrollview's height
             layoutConstraints.append(NSLayoutConstraint(item: currentView, attribute: .width, relatedBy: .equal, toItem: scrollView, attribute: .height, multiplier: 0.8, constant: 0))
@@ -111,10 +111,10 @@ open class AZExpandableIconListView: UIView {
             
             if i == 0 {
                 let marginLeftConstraint = NSLayoutConstraint(item: currentView,
-                    attribute: NSLayoutAttribute.left,
+                                                              attribute: NSLayoutConstraint.Attribute.left,
                     relatedBy: .equal,
                     toItem: scrollView,
-                    attribute: NSLayoutAttribute.left,
+                    attribute: NSLayoutConstraint.Attribute.left,
                     multiplier: 1, constant: 0)
                 
                 layoutConstraints.append(marginLeftConstraint)
@@ -134,9 +134,9 @@ open class AZExpandableIconListView: UIView {
         layoutConstraints.append(contentsOf: itemSpacingConstraints)
         scrollView.addConstraints(layoutConstraints)
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[container]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["container":scrollView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[container]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["container":scrollView]))
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[container]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["container":scrollView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[container]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["container":scrollView]))
         
         isSetupFinished = true
         
