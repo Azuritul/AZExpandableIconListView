@@ -3,7 +3,7 @@
 # * https://github.com/supermarin/xcpretty#usage
 rvm: 2.2.2
 language: objective-c
-osx_image: xcode8
+osx_image: xcode 11
 notifications:
   slack: azuritul:lCn25gPPuWbKQ4VlfG5Qglwp
 
@@ -12,8 +12,7 @@ notifications:
 podfile: Example/Podfile
 before_install:
  - gem install xcpretty
- - gem install cocoapods  -v '1.1.1' # Since Travis is not always on latest version
- - pod repo update
+ - gem install cocoapods  -v '1.8.1' # Since Travis is not always on latest version
  - pod install --project-directory=Example
 
 script:
