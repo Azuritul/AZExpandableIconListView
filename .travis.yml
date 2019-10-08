@@ -16,6 +16,6 @@ before_install:
  - pod install --project-directory=Example
 
 script:
-- set -o pipefail && xcodebuild test -workspace Example/AZExpandableIconListView.xcworkspace -scheme AZExpandableIconListView-Example -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.0' ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/AZExpandableIconListView.xcworkspace -scheme AZExpandableIconListView-Example -destination 'platform:iOS Simulator, id:1E53D31E-F880-4137-AF9A-A6754E531F04, OS:11.1, name:iPhone 8 ' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
 
