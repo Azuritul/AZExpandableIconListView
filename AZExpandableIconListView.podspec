@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AZExpandableIconListView"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "Expandable icon list view"
   s.swift_version    = "5.0"
 # This description is used to generate tags and improve search results.

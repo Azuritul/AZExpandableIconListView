@@ -43,6 +43,8 @@ use_frameworks!
 pod 'AZExpandableIconListView'
 ```
 ## Version
+- 1.0.1
+  - Fix lint warning
 - 1.0.0
   - Updated for Swift 5
 - 0.2.0
